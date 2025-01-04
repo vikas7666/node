@@ -6,14 +6,17 @@ console.log("fileName =>",__filename);
 
 fs.writeFileSync("code.txt","some code")
 
-// Interview Question
+/* 
+Interview Question
+1) is it possible to import only writeFileSync rather than whole fs module yes its possible 
+const fs = require('fs').writeFileSync;
 
-/* If interviewer ask is it possible to import only file not whole system 
-yes it is possibel
+2) can i write in this way is it possible is okay => yes it will work
 
-const fs = require('fs').writeFileSync;  // imported only filesystem
+console.log("dirname__", __dirname)
+const fs = require('fs');
 
-do we need variable name fs or filename not 
+3) is it compulsary to name fs variable name => No even if we write gs it will work
+const gs = require('fs');
 
-const gs = require('fs').writeFileSync; // Working
- */
+*/
