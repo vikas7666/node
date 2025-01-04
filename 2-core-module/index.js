@@ -8,11 +8,12 @@ fs.writeFileSync("code.txt","some code")
 
 // Interview Question
 
-// If interviewer ask only import write file not whole filesystem then
-// yes it is possibel
+/* If interviewer ask is it possible to import only file not whole system 
+yes it is possibel
 
-// const fs = require('fs').writeFileSync;
+const fs = require('fs').writeFileSync;  // imported only filesystem
 
-// kya hame const ke file name fs ke jaise hi require ke fs hona chahiye to nahi 
+do we need variable name fs or filename not 
 
-// const gs = require('fs').writeFileSync; // Working
+const gs = require('fs').writeFileSync; // Working
+ */

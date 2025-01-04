@@ -8,3 +8,6 @@ ye sab package ke dependencies mentation karata hai if delete it ye phir se ban 
 # Node js is single threaded or multi threaded
 Node js is single threaded 
 async language 
+
+# core modules
+fs.writeFileSync
