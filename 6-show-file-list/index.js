@@ -20,3 +20,9 @@ fs.readdir(dirPath,(err,files) =>{
         console.log(item)
     })
 })
+
+
+/* 
+We can access folder inside web server only not from C drive or any other folder.
+
+*/
