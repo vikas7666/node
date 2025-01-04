@@ -1,25 +1,46 @@
-// // It will display windows entire process description
-// console.log(process.argv[2])  // return hello 
+const fs = require('fs')  // imported file system
 
-const fs = require('fs');
+// console.log(process.argv[2])  // hello
 
-// from args arguments we can pass arguments in command line  
+/* args full form=> argument vector 
+  How hello came => hello came from 
+  before executing file we have pass hello in command line 
+  nodemon .\5-Input-command-line\index.js hello */
 
-const input = process.argv;
-// fs.writeFileSync(input[2],input[3]);
+/* 
+Output given 2 path one where is node and 2nd one from where we are executing our code 
+Output => console.log(process.argv)
+[
+  'C:\\Program Files\\nodejs\\node.exe',
+  'D:\\leaning\\nodev2\\code-step-by-step-v2\\5-Input-command-line\\index.js'
+]
+*/
 
-/* This is command line  */
-// node .\index.js apple.txt 'This is a file system'
+
+/* 
+process is an object which contain whole things
+console.log(process.args)
+
+*/
 
 
-//  node .\index.js add orange.txt 'This is orange file'
-if(input[2] == 'add'){
-    fs.writeFileSync(input[3],input[4]);
+// section 2
+
+let input  = process.argv;
+let filePath = __dirname;
+
+
+// fs.writeFileSync(filePath + '/' +input[2], input[3])
+
+// console.log(__dirname)  // D:\leaning\nodev2\code-step-by-step-v2\5-Input-command-line
+
+// file add remove functionality 
+
+if(input[2] =='add'){
+    fs.writeFileSync(filePath + '/' +input[3], input[4])
 }else if(input[2] == 'remove'){
-    fs.unlinkSync(input[3])
+    fs.unlinkSync(filePath + '/' +input[3])
 }else{
-    console.log("Invalid input")
+    console.log("You are Providdeing wrong input")
 }
 
-// How to remove command line
-// node .\index.js remove orange.txt
