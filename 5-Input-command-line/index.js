@@ -44,3 +44,12 @@ if(input[2] =='add'){
     console.log("You are Providdeing wrong input")
 }
 
+
+
+/* 
+  command executed for creating and non creating file in command line 
+
+  node .\5-Input-command-line\index.js remove hello
+  node .\5-Input-command-line\index.js add  hello
+
+*/
