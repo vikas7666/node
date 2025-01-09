@@ -21,3 +21,8 @@ async language
 
 # core modules
 fs.writeFileSync
+
+// from req.query we get parameter value and we used get method
+app.get('',(req,res) =>{
+    console.log("req sent by browser using query param?", req.query)
+})
