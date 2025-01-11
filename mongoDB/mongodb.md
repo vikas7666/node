@@ -25,3 +25,8 @@ The data stored in collection.
 collection don't have row and column.
 Data is stored in form of object.
 
+// Connect mongoDb to node js 
+https://www.npmjs.com/package/mongodb
+
+npm i mongodb
+
