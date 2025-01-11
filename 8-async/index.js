@@ -26,4 +26,4 @@ waitingData.then((data)=>{
     console.log(a+b)
 })
 
-// output is 50 waited more than 
+// output is 50, waited more than 

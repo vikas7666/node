@@ -12,11 +12,11 @@ npm i ejs
 here if we check we have passed user object while rendering 
 
 */
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs');  // compulsary
 
 app.set('views', viewsPath);
 
-app.get('/profile', (_, res) => {
+app.get('/profile', (_, res) => {   // sending json data from server
     const user = {
         name : 'Vikas',
         surname : 'shukla',

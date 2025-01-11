@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 /* 
-We say query param or parameter
+Can be say query param or parameter
     get method me first paramater jata hai route and one callback function which contain req, and resp
 
     req => We use when we want some input from browser by default server return even if we not use req method

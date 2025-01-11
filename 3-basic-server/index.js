@@ -11,7 +11,7 @@ http.createServer((req, resp) =>{
 }).listen(4500);
 
 // req suppose we want from url parameter   
-// resp jo hum yahaa se send karate hai 
+// resp jo hum server se send karate hai 
 
 
 // createServer ye whole function ko ek parameter jaise leta hai
