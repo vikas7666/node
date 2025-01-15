@@ -9,25 +9,67 @@ let dbConnect  =  require('./database');
 let dbconnect1 = async() =>{
     let db = await dbConnect();
     let result = await db.find().toArray();
-    console.log(result);
+    //console.log(result);
     return result; 
-}   
+}  
+
+app.use(express.json());
 
 app.get('/',async(req,res) =>{
     let data = await dbconnect1(); // Await the result of dbconnect1
     res.send(data);
 })
 
+// In post or get we can put root url 
+// app.post('/',(req,res) =>{
+//     console.log("req.body",req.body);
+//     res.send(req.body)
+// })
+
+
+// Now we are storing data in database
+// if we are storing single object then inserOne method use but if we are storing multiple then insertmany used
+app.post('/',async(req,res) =>{
+    let data = await dbConnect();
+    let result = await data.insertOne(req.body)
+    res.send(result)
+})
+
+
+// Put method 
+// we can use post and put method for data change but put recommended hai 
+
+// app.put('/',async (req,res) =>{
+//     let data = await dbConnect();
+//     let result  = await data.updateOne(
+//         {name : req.body.name},
+//         {$set : req.body}
+//     )
+//     res.send(result)
+// })
+
+// suppose we want to upadte name in json using param
+app.put('/:name',async (req,res) =>{
+    let data = await dbConnect();
+    let result  = await data.updateOne(
+        {name : req.param.name},
+        {$set : req.body}
+    )
+    res.send(result)
+})
+
+/* Delete Method  */
+
 
 // make separte code 
-// app.get('',async(req,res) =>{
-//     let db = await dbConnect();
-//     let result = await db.find().toArray();
-//     result.forEach((item) =>{
-//         res.send(`<li>${item.name}</li>`)
-//     })
+app.get('',async(req,res) =>{
+    let db = await dbConnect();
+    let result = await db.find().toArray();
+    result.forEach((item) =>{
+        res.send(`<li>${item.name}</li>`)
+    })
     
-// })
+})
 
 
 /* 
@@ -35,4 +77,4 @@ app.get('/',async(req,res) =>{
 
 */
 
-app.listen(3000)
+app.listen(5000)
