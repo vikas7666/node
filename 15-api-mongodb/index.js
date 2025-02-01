@@ -5,6 +5,7 @@
 const express  =  require('express');
 const app = express();
 let dbConnect  =  require('./database');
+const mongodb = require('mongodb')
 
 let dbconnect1 = async() =>{
     let db = await dbConnect();
@@ -60,6 +61,12 @@ app.put('/:name',async (req,res) =>{
 
 /* Delete Method  */
 
+app.delete('/:id',async(req, res) =>{
+    let data = await dbConnect();
+    console.log('req.param.id',req.params.id);
+    let result  = await data.deleteOne({_id: new mongodb.ObjectId (req.params.id)})
+    res.send("done") 
+})
 
 // make separte code 
 app.get('',async(req,res) =>{
